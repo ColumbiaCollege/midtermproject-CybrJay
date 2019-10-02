@@ -11,39 +11,33 @@ class Ball {
 
   //Ball method 
   Ball() {
-
     x = width/2;
     y = height/2;
-    ////Location and size for ball
-    //ellipse(450, 350, 40, 40);
-    //Color for ball
-    fill(255);
   }
 
   //Movement method for ball
   void move() {
     if (keyPressed) {
       if (key == 'a') {
-        fill(#BAD3F6);
+        fill(#C87865);
         x--;
       }
-    } else {
-      fill(#F8E3E6);
+      if (key == 'd') {
+        fill(#5B4881);
+        x++;
+      }
+      if (key == 'w') {
+        fill(#2292C5);
+        y--;
+      }
+      if (key == 's') {
+        fill(#E8E1CA);
+        y++;
+      }
+      //Ball used when movement is initialized
+      ellipse(x, y, 40, 40);
     }
-    
-    if (keyPressed) {
-       if (key == 'd') {
-         fill(#4E4A52);
-         x++;
-       }
-    } else {
-      fill(#1DCFA7);
-    }
-     //Ball used when 
-    ellipse(x, y, 40, 40);
   }
-
-
 
   //Display method for ball
   void display() {
