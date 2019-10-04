@@ -1,24 +1,19 @@
 //Declaration for Ball class
 class Ball {
   //Properties
-  //Datatype that's declared for the X variable
-  float x;
-  //Datatype that's declared for the Y variable
-  float y;
+
   //Datatype that's declared for the preX variable 
   float preX;
   //Datatype that's declared for the preY variable
   float preY;
+  //Object instantiations for movement 
+  PVector location = new PVector(width/2, height/2);
+  PVector velocity = new PVector(0, 12.1);
+  PVector gravity  = new PVector(0, 0.4);
+  PVector horizontalSpeed = new PVector(0, 0);
+
 
   //Constructor
-
-  //Ball method 
-  Ball() {
-    //X variable that's initialized to width/2
-    x = width/2;
-    //Y variable that's initialized to height/2
-    y = height/2;
-  }
 
   //Movement method for ball
   void move() {
@@ -28,45 +23,48 @@ class Ball {
       if (key == 'a') {
         //Fill for left ball movement
         fill(#C87865);
-        //X variable that moves ball left 
-        x= x -6;
+        //X component that moves ball left 
+        horizontalSpeed.x = -4;
+        //Location vector that adds the X component
+        location.add(horizontalSpeed);
       }
+
       //if statement used to check if ball d is moving
       if (key == 'd') {
         //Fill for right ball movement
         fill(#5B4881);
-        //X variable that moves ball right
-        x= x +6;
+        //X component that moves ball right
+        horizontalSpeed.x = 4;
+        //Location vector that adds the X component
+        location.add(horizontalSpeed);
       }
-      //if statement used to check if ball w is moving
-      if (key == 'w') {
-        //Fill for upwards ball movement
-        fill(#2292C5);
-        //y variable that moves ball upwards
-        y= y -6;
-      }
-      //if statement used to check if ball s is moving
-      if (key == 's') {
-        //Fill for downwards ball movement
-        fill(#E8E1CA);
-        //y variable that moves ball downwards
-        y= y +6;
-      }
-      
-      //Gravity method for ball
-      void gravity() {
-        
-      }
-      
-      
-      //Ball used when movement is initialized
-      ellipse(x, y, 40, 40);
     }
+
+    //Location vector that the velocity vector
+    location.add(velocity);
+    //Velocity vector that adds the gravity vector
+    velocity.add(gravity); 
+
+    //if statement used to make ball bounce off edges
+    if ((location.x > width) || (location.x < 0)) {
+      //The height of the ball being dropped
+      velocity.x = velocity.x * -1;
+    }
+    //if statement used to control height of the ball
+    if (location.y > height) {
+      //The height of the ball when it hits the bottom of the window
+      velocity.y = velocity.y * -0.95; 
+      //LocationY vector checking if it's equal to the height
+      location.y = height;
+    } 
+
+    //Ball used when movement is initialized
+    ellipse(location.x, location.y, 40, 40);
   }
 
   //Display method for ball
   void display() {
     //Location and size for ball
-    ellipse(x, y, 40, 40);
+    ellipse(location.x, location.y, 40, 40);
   }
 }
