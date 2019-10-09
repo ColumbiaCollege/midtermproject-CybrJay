@@ -7,14 +7,19 @@ class Ball {
   //Datatype that's declared for the preY variable
   float preY;
   //Object instantiations for movement 
-  PVector location = new PVector(width/2, height/2);
-  PVector velocity = new PVector(0, 12.1);
-  PVector gravity  = new PVector(0, 0.4);
-  PVector horizontalSpeed = new PVector(0, 0);
-
+  PVector location;
+  PVector velocity;
+  PVector gravity;
+  PVector horizontalSpeed;
 
   //Constructor
-
+ Ball() {
+ location = new PVector(width/2, height/2);
+ velocity = new PVector(0, 12.1);
+ gravity  = new PVector(0, 0.8);
+ horizontalSpeed = new PVector(0, 0);
+ 
+ }
   //Movement method for ball
   void move() {
     //if statement used to control ball movement using keyPressed function
@@ -38,6 +43,8 @@ class Ball {
         //Location vector that adds the X component
         location.add(horizontalSpeed);
       }
+      
+      if(rect circle collide then velocvity.y *= -1
     }
 
     //Location vector that the velocity vector
