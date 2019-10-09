@@ -15,8 +15,8 @@ class Ball {
   //Constructor
  Ball() {
  location = new PVector(width/2, height/2);
- velocity = new PVector(0, 12.1);
- gravity  = new PVector(0, 0.6);
+ velocity = new PVector(0, 8.1);
+ gravity  = new PVector(0, 0.8);
  horizontalSpeed = new PVector(0, 0);
  
  }
