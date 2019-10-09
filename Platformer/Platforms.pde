@@ -3,18 +3,18 @@ class Platform {
   //Properties
 
   //Datatype that's declared for the X variable
-  float x;
+  int x;
   //Datatype that's declared for the Y variable
-  float y;
+  int y;
   //Datatype that's declared for the W variable
-  float w;
+  int w;
   //Datatype that's declared for the H variable
-  float h;
+  int h;
   int xPos;
   int xDir;
 
   //Constructor
-  Platform(float tempY, int tempxDir, int tempxPos) {
+  Platform(int tempY, int tempxDir, int tempxPos) {
     x= 0;
     y= tempY;
     w= 150;

@@ -21,17 +21,20 @@ void setup() {
   //Initialization for ball
   boy = new Ball();
   //Initialization for platform
-  girl = new Platform(450,6, 0);
+  girl = new Platform(450,4, 0);
   //Initialization for second platform
-  girl2 = new Platform(300,6, 850);
+  girl2 = new Platform(300,4, 850);
 }
 
 //Draw method used to store background
 void draw() {
   //Background for window
   background(0);
+  
+  // Check for bounce first otherwise you can get weird behavior
+  
   //Calls movement method on Ball
-  boy.move();
+  boy.move(new Platform[] {girl, girl2});
   //Calls display method on Ball
   boy.display();
   //Calls movement method on Platform
