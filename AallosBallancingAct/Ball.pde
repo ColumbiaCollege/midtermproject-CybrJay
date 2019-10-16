@@ -14,7 +14,7 @@ class Ball {
 
   //Constructor
   Ball() {
-    //Drake helped me create movement of Aallo
+    //Drake helped me the create movement of Aallo
     
     //Location of the ball
     location = new PVector(width/2, height/2);
