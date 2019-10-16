@@ -99,7 +99,7 @@ class Ball {
     //If statement initialized for check for collision
     if (location.x < x2 && location.x > x1 && location.y > y1 && location.y < y2)
     {
-      //
+      //Ends method returning true
       return true;
     } else
     {
