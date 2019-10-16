@@ -30,12 +30,19 @@ void setup() {
 
 //Draw method used to store background
 void draw() {
+  //If statement to call boy IsBottom method
   if (boy.IsBottom()) {
+    //Background color FIN screen
     background(0);
+    //Size for FIN
     textSize(64);
+    //Color for FIN
     fill(#FFFFF3);
+    //Position for FIN
     textAlign(CENTER);
+    //Creates word for death screen and sets the width/height for it
     text("FIN", width/2, height/2);
+    //Ends the if statement
     return;
   }
 

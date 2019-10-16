@@ -101,11 +101,14 @@ class Ball {
     {
       //Ends method returning true
       return true;
+      //Else returns method false
     } else
     {
+      //Ends method returning false
       return false;
     }
   }
+  //Method for checking Aallo hits the bottom of the window 
   boolean IsBottom() {
     return location.y >= height;
   }
