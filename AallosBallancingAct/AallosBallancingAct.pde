@@ -1,4 +1,4 @@
-//Midterm Project
+//Aallo's Ballancing Act
 //Justin Whitfield
 
 //Datatype that's declared for the X variable
@@ -10,8 +10,14 @@ float w= 150;
 //Datatype that's declared for the H variable
 float h= 50;
 
+//Variable declared to create
+//name for ball
 Ball boy;
+//Variable declared to create
+//Name for platform1
 Platform girl;
+//Variable declared to create
+//Name for platform2
 Platform girl2;
 
 
@@ -41,7 +47,7 @@ void draw() {
     //Position for FIN
     textAlign(CENTER);
     //Creates word for game over screen 
-    //And sets the position to width/2,height/2
+    //And sets position to the middle of the screen
     text("FIN", width/2, height/2);
     //Ends the called boy.IsBottom method
     return;

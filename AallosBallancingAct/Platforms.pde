@@ -10,7 +10,9 @@ class Platform {
   int w;
   //Datatype that's declared for the H variable
   int h;
+  //Datatype that's declared for the xPos variable
   int xPos;
+  //Datatype that's declared for the xDir variable
   int xDir;
 
   //Constructor
@@ -22,23 +24,21 @@ class Platform {
     xPos=tempxPos;
     xDir=tempxDir;
   }
-  
+
   //Movement method for platform
   void move() {
-    //for (int p = 0; p < 30; p = p+4) { 
-    //  rect(p, y, w, h);
-    //}
+    //Rectangle created for platforms
     rect(xPos, y, w, h);
+ 
+    //xPos checking if it adds
+    //xPos plus xDir
     xPos=xPos+xDir;
-    if (xPos+w>width || xPos<0)
-    {
+
+    //Controls position of platforms
+    if (xPos+w>width || xPos<0) {
+      //Controls direction of platforms
       xDir=-xDir;
     }
-
-    //if (xPos>width-20 || xPos+w<width)
-    //{
-    //  xDir=+xDir;
-    //}
   }
 
   //Display method for platform

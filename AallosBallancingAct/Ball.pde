@@ -14,12 +14,12 @@ class Ball {
 
   //Constructor
   Ball() {
-    //Drake helped me the create movement of Aallo
+    //Drake helped me the create movement/momentum of Aallo
 
     //Location of the ball
     location = new PVector(width/2, height/2);
     //Velocity of the ball
-    velocity = new PVector(0, 12.1);
+    velocity = new PVector(0, 11.1);
     //Gravity of the ball
     gravity  = new PVector(0, 0.5);
     //Speed of the ball
@@ -28,8 +28,8 @@ class Ball {
 
   //Movement method for ball
   void move(Platform[] platforms) {
-    //if statement used to control
-    //ball movement using keyPressed function
+    //If statement used to control
+    //Ball movement using keyPressed function
     if (keyPressed) {
       //if statement used to check if ball a is moving
       if (key == 'a') {
@@ -60,7 +60,7 @@ class Ball {
     //Seth helped me with this collision 
 
     //Cycles through the platforms and 
-    //sees if the ball is colliding with them
+    //Sees if the ball is colliding with them
     for (Platform pf : platforms)
     {
       //Seth helped me with this collision 
@@ -81,10 +81,10 @@ class Ball {
     //if statement used to control height of the ball
     if (location.y > height) {
       //The height of the ball when 
-      //it hits the bottom of the window
+      //It hits the bottom of the window
       velocity.y = velocity.y * -0.95; 
       //LocationY vector checking if 
-      //it's equal to the height
+      //It's equal to the height
       location.y = height;
     } 
 
@@ -115,10 +115,10 @@ class Ball {
     }
   }
   //Method that's initialized to check 
-  //if ball hits the bottom of the window
+  //If ball hits the bottom of the window
   boolean IsBottom() {
-    //Ends the checked IsBottom method returning location.y which
-    //is greater than or equal to height
+    //Ends the checked IsBottom method returning location.y 
+    //Which is greater than or equal to height
     return location.y >= height;
   }
 }
