@@ -30,12 +30,20 @@ void setup() {
 
 //Draw method used to store background
 void draw() {
+  //If statement called for the boy IsBottom method
   if (boy.IsBottom()) {
+    //Background for FIN screen
     background(0);
+    //Size for FIN
     textSize(64);
-    fill(#FFFFF3);
+    //Color for FIN
+    fill(#8186d5);
+    //Position for FIN
     textAlign(CENTER);
+    //Creates word for game over screen 
+    //And sets the position to width/2,height/2
     text("FIN", width/2, height/2);
+    //Ends the called boy.IsBottom method
     return;
   }
 

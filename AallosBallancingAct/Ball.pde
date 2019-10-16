@@ -98,8 +98,8 @@ class Ball {
     ellipse(location.x, location.y, 40, 40);
   }
 
-
   //Seth helped me with this collision 
+
   //Makes collision on a per ball instance
   boolean collision(int x1, int x2, int y1, int y2) {
     //If statement initialized for check for collision
@@ -117,7 +117,7 @@ class Ball {
   //Method that's initialized to check 
   //if ball hits the bottom of the window
   boolean IsBottom() {
-    //Ends IsBottom method returning location.y which
+    //Ends the checked IsBottom method returning location.y which
     //is greater than or equal to height
     return location.y >= height;
   }
