@@ -99,13 +99,16 @@ class Ball {
     //If statement initialized for check for collision
     if (location.x < x2 && location.x > x1 && location.y > y1 && location.y < y2)
     {
-      //
+      //Ends the collision method returning true
       return true;
+      //Extends the collision method
     } else
     {
+      //Ends the collision method returning false
       return false;
     }
   }
+  //
   boolean IsBottom() {
     return location.y >= height;
   }

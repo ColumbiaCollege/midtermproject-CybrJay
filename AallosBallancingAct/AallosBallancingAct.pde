@@ -42,7 +42,7 @@ void draw() {
     //Background for window
     background(0);
 
-    // Check for bounce first otherwise you can get weird behavior
+    
 
     //Calls movement method on Ball
     boy.move(new Platform[] {girl, girl2});
