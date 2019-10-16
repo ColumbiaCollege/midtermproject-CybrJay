@@ -13,15 +13,21 @@ class Ball {
   PVector horizontalSpeed;
 
   //Constructor
- Ball() {
- location = new PVector(width/2, height/2);
- velocity = new PVector(0, 12.1);
- gravity  = new PVector(0, 0.8);
- horizontalSpeed = new PVector(0, 0);
- 
- }
+  Ball() {
+    //Drake helped me create movement of Aallo
+    
+    //Location of the ball
+    location = new PVector(width/2, height/2);
+    //Velocity of the ball
+    velocity = new PVector(0, 12.1);
+    //Gravity of the ball
+    gravity  = new PVector(0, 0.5);
+    //Speed of the ball
+    horizontalSpeed = new PVector(0, 0);
+  }
+  
   //Movement method for ball
-  void move() {
+  void move(Platform[] platforms) {
     //if statement used to control ball movement using keyPressed function
     if (keyPressed) {
       //if statement used to check if ball a is moving
@@ -43,14 +49,25 @@ class Ball {
         //Location vector that adds the X component
         location.add(horizontalSpeed);
       }
-      
-      if(rect circle collide then velocvity.y *= -1
     }
 
     //Location vector that the velocity vector
     location.add(velocity);
     //Velocity vector that adds the gravity vector
     velocity.add(gravity); 
+
+    //Seth helped me with this collision 
+    //Cycle through the platforms and see if the ball is colliding with them.
+    for (Platform pf : platforms)
+    {
+      //Seth helped me with this collision 
+      if (collision(pf.xPos, (pf.xPos + pf.w), pf.y, (pf.y + pf.h)) == true) {
+        //Printed text for collision
+        print("bounce");
+        //The height of the ball when it hits the bottom of the window
+        velocity.y = velocity.y * -1;
+      }
+    }
 
     //if statement used to make ball bounce off edges
     if ((location.x > width) || (location.x < 0)) {
@@ -73,5 +90,23 @@ class Ball {
   void display() {
     //Location and size for ball
     ellipse(location.x, location.y, 40, 40);
+  }
+
+
+  //Seth helped me with this collision 
+  // Making collision on a per ball basis in cause you need support for multiple balls
+  boolean collision(int x1, int x2, int y1, int y2) {
+    //If statement initialized for check for collision
+    if (location.x < x2 && location.x > x1 && location.y > y1 && location.y < y2)
+    {
+      //
+      return true;
+    } else
+    {
+      return false;
+    }
+  }
+  boolean IsBottom() {
+    return location.y >= height;
   }
 }
