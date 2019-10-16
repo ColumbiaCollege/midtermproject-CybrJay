@@ -15,7 +15,7 @@ class Ball {
   //Constructor
   Ball() {
     //Drake helped me the create movement of Aallo
-    
+
     //Location of the ball
     location = new PVector(width/2, height/2);
     //Velocity of the ball
@@ -25,10 +25,11 @@ class Ball {
     //Speed of the ball
     horizontalSpeed = new PVector(0, 0);
   }
-  
+
   //Movement method for ball
   void move(Platform[] platforms) {
-    //if statement used to control ball movement using keyPressed function
+    //if statement used to control
+    //ball movement using keyPressed function
     if (keyPressed) {
       //if statement used to check if ball a is moving
       if (key == 'a') {
@@ -57,14 +58,17 @@ class Ball {
     velocity.add(gravity); 
 
     //Seth helped me with this collision 
-    //Cycle through the platforms and see if the ball is colliding with them.
+
+    //Cycles through the platforms and 
+    //sees if the ball is colliding with them
     for (Platform pf : platforms)
     {
       //Seth helped me with this collision 
       if (collision(pf.xPos, (pf.xPos + pf.w), pf.y, (pf.y + pf.h)) == true) {
         //Printed text for collision
         print("bounce");
-        //The height of the ball when it hits the bottom of the window
+        //The height of the ball when 
+        //it hits the bottom of the window
         velocity.y = velocity.y * -1;
       }
     }
@@ -76,9 +80,11 @@ class Ball {
     }
     //if statement used to control height of the ball
     if (location.y > height) {
-      //The height of the ball when it hits the bottom of the window
+      //The height of the ball when 
+      //it hits the bottom of the window
       velocity.y = velocity.y * -0.95; 
-      //LocationY vector checking if it's equal to the height
+      //LocationY vector checking if 
+      //it's equal to the height
       location.y = height;
     } 
 
@@ -94,7 +100,7 @@ class Ball {
 
 
   //Seth helped me with this collision 
-  // Making collision on a per ball basis in cause you need support for multiple balls
+  //Makes collision on a per ball instance
   boolean collision(int x1, int x2, int y1, int y2) {
     //If statement initialized for check for collision
     if (location.x < x2 && location.x > x1 && location.y > y1 && location.y < y2)
@@ -108,8 +114,11 @@ class Ball {
       return false;
     }
   }
-  //
+  //Method that's initialized to check 
+  //if ball hits the bottom of the window
   boolean IsBottom() {
+    //Ends IsBottom method returning location.y which
+    //is greater than or equal to height
     return location.y >= height;
   }
 }
