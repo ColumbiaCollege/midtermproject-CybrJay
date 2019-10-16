@@ -14,11 +14,18 @@ class Ball {
 
   //Constructor
   Ball() {
+    //Drake helped me create movement of Aallo
+    
+    //Location of the ball
     location = new PVector(width/2, height/2);
+    //Velocity of the ball
     velocity = new PVector(0, 12.1);
-    gravity  = new PVector(0, 0.3);
+    //Gravity of the ball
+    gravity  = new PVector(0, 0.5);
+    //Speed of the ball
     horizontalSpeed = new PVector(0, 0);
   }
+  
   //Movement method for ball
   void move(Platform[] platforms) {
     //if statement used to control ball movement using keyPressed function
@@ -49,10 +56,13 @@ class Ball {
     //Velocity vector that adds the gravity vector
     velocity.add(gravity); 
 
-    // cycle through the platforms and see if the ball is colliding with them.
+    //Seth helped me with this collision 
+    //Cycle through the platforms and see if the ball is colliding with them.
     for (Platform pf : platforms)
     {
+      //Seth helped me with this collision 
       if (collision(pf.xPos, (pf.xPos + pf.w), pf.y, (pf.y + pf.h)) == true) {
+        //Printed text for collision
         print("bounce");
         //The height of the ball when it hits the bottom of the window
         velocity.y = velocity.y * -1;
@@ -82,14 +92,21 @@ class Ball {
     ellipse(location.x, location.y, 40, 40);
   }
 
+
+  //Seth helped me with this collision 
   // Making collision on a per ball basis in cause you need support for multiple balls
   boolean collision(int x1, int x2, int y1, int y2) {
+    //If statement initialized for check for collision
     if (location.x < x2 && location.x > x1 && location.y > y1 && location.y < y2)
     {
+      //
       return true;
     } else
     {
       return false;
     }
+  }
+  boolean IsBottom() {
+    return location.y >= height;
   }
 }
